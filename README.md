@@ -86,7 +86,7 @@ python main_mbart.py --pdf --field abstract --filename FILENAME_WITH_PATH
 * `get_art_pdf.py` 爬取[All Articles | bioRxiv](https://www.biorxiv.org/content/early/recent)上的论文
 * `get_pdf_content.py` 抽取pdf论文中的标题、摘要和简介
 
-#### plain_transformer
+#### typical_transformer
 
 基于`pytorch`实现transformer的基本架构。
 

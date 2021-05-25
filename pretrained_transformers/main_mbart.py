@@ -11,9 +11,7 @@ import os
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
 nltk_tokenizer = load("tokenizers/punkt/{0}.pickle".format("english"))
-nltk_tokenizer._params.abbrev_types.add('al')
-nltk_tokenizer._params.abbrev_types.add('e.g')
-
+nltk_tokenizer._params.abbrev_types.update({'al', 'e.g', 'resp', 'i.e'})
 use_args=True
 
 if use_args:
@@ -35,7 +33,7 @@ if use_args:
     print("argparse.args=", args, type(args))
 
 tokenizer = AutoTokenizer.from_pretrained('D:/MSRA/project/transformers_model/mbart')
-metric = load_metric("D:/MSRA/project/transformers/metric.py")
+metric = load_metric("metric.py")
 
 model = AutoModelForSeq2SeqLM.from_pretrained(
     'D:/MSRA/project/transformers_model/mbart')

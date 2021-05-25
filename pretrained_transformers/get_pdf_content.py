@@ -204,7 +204,7 @@ class PDF_Content:
             #print("宽：",pdf.pages[0].width,"高：",pdf.pages[0].height)
             row_height, main_font_size = get_main_body_row_height_and_font_size(
                 pdf)
-            print("正文行距：", row_height, "正文字号：", main_font_size)
+            # print("正文行距：", row_height, "正文字号：", main_font_size)
 
             for i in range(len(pdf.pages)):
                 #print("第",i,"页")
