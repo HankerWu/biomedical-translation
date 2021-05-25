@@ -60,14 +60,20 @@ python main_mbart.py --pdf --field abstract --filename FILENAME_WITH_PATH
 ## 结果
 
 
-|      | 无预训练transformer | 预训练transformer | 预训练mBART |
-| ------ | --------------------- | ------------------- | ------------- |
-| BLEU | 20.93               | 25.33             | 28.96       |
-
+|     | 无预训练transformer | 预训练transformer | 预训练mBART |
+| :----: | :-------------------: | :-----------------: | :-----------: |
+| BLEU |        20.93        |       25.33       |    28.96    |
 
 
 翻译单句示例：
-![](image/README/1621929441551.png)
+
+
+|        模型        |                                                                                                                          结果                                                                                                                          |
+| :-------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|        原文        | However, the within-host evolutionary dynamics of influenza viruses remain incompletely understood, in part because most studies have focused on within-host virus diversity of infections in otherwise healthy adults based on single timepoint data. |
+| 无预训练transformer |                                                                 流感嗜血杆菌在变迁1区, 在病毒感染过程中起重要作用, 主要从单面资料提炼, 在病毒感染成人基础上,由基因四季度图象数据控制。                                                                 |
+|  预训练transformer  |                                                            但是, 对流感病毒宿主内演化动力仍不完全认识, 部分是由于多数研究都以单时点数据为基础, 着重讨论了原代健康成人感染宿主内病毒多样性。                                                            |
+|     预训练mBART     |                                                               流感病毒在宿主体内的演变动力学至今尚未完全阐明, 主要是基于单个时间点资料对健康成人体内流感病毒感染者感染的多样性进行研究。                                                               |
 
 ## 代码文件目录结构说明
 
