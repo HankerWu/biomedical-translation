@@ -64,6 +64,9 @@ python main_mbart.py --pdf --field abstract --filename FILENAME_WITH_PATH
 | ------ | --------------------- | ------------------- | ------------- |
 | BLEU | 20.93               | 25.33             | 28.96       |
 
+
+
+翻译单句示例：
 ![](image/README/1621929441551.png)
 
 ## 代码文件目录结构说明
