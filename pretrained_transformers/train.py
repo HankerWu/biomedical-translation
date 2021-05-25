@@ -1,4 +1,4 @@
-# model_checkpoint = "Helsinki-NLP/opus-mt-en-zh"
+model_checkpoint = "Helsinki-NLP/opus-mt-en-zh"
 
 import config
 
@@ -21,7 +21,8 @@ def get_data_dict(data_path):
     return Dataset.from_dict(data_dict)
 
 from transformers import AutoTokenizer
-tokenizer = AutoTokenizer.from_pretrained(config.model_dir)
+
+tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 metric = load_metric("metric.py", num_process=4)
 max_input_length = 256
 max_target_length = 256
@@ -47,7 +48,8 @@ tokenized_dev_data = get_data_dict(config.dev_data_path).map(preprocess_function
 tokenized_test_data = get_data_dict(config.test_data_path).map(preprocess_function, batched=True)
 
 from transformers import AutoModelForSeq2SeqLM, DataCollatorForSeq2Seq, Seq2SeqTrainingArguments, Seq2SeqTrainer
-model = AutoModelForSeq2SeqLM.from_pretrained(config.model_dir)
+
+model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
 model.init_weights()
 # model.save_pretrained(config.model_dir)  # save
 # model = model_class.from_pretrained(config.model_dir)  # re-load
@@ -114,7 +116,7 @@ trainer = Seq2SeqTrainer(model,
                          data_collator=data_collator,
                          tokenizer=tokenizer,
                          compute_metrics=compute_metrics)
-                         
+
 import torch
 print(torch.cuda.current_device(), torch.cuda.device_count())
 print('Start training...')

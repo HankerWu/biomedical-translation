@@ -14,7 +14,7 @@ nltk_tokenizer = load("tokenizers/punkt/{0}.pickle".format("english"))
 nltk_tokenizer._params.abbrev_types.add('al')
 nltk_tokenizer._params.abbrev_types.add('e.g')
 
-use_args=False
+use_args=True
 
 if use_args:
     # 创建解析步骤
