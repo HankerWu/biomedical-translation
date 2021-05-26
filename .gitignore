@@ -10,7 +10,9 @@
 *.bin
 *.json
 *.zip
-*.txt
+/get_data/pdf_contents
+/get_data/test_txt
+/get_data/*.txt
 /document
 /mydata
 /retained_data

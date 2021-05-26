@@ -6,6 +6,26 @@
 
 自己收集所得的数据，[Google云盘地址](https://drive.google.com/drive/folders/13kN6eF7K40JBJtn_nn6EdBcSVivBA0y0?usp=sharing)
 
+## 环境依赖
+
+要求python>=3.6，torch>=1.6.0。主要依赖有
+
+* `transformers`
+* `datadets`
+* `sentencepiece`
+* `nltk`
+* `sacrebleu`
+* `pdfplumber`
+* `PyPDF2`
+
+在命令行输入
+
+```apache
+pip install -r requirements.txt
+```
+
+即可快速配置好环境。
+
 ## 模型
 
 #### 1. 基于`pytorch`实现的标准transformer模型（无预训练模型）
@@ -63,7 +83,6 @@ python main_mbart.py --pdf --field abstract --filename FILENAME_WITH_PATH
 |     | 无预训练transformer | 预训练transformer | 预训练mBART |
 | :----: | :-------------------: | :-----------------: | :-----------: |
 | BLEU |        20.93        |       25.33       |    28.96    |
-
 
 翻译单句示例：
 
